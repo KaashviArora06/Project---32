@@ -28,12 +28,19 @@ function draw(){
  }
  textSize(20);
  fill("white");
- text ("Time : "+hour,100,50);
+ if(hour>=12){ 
+     text("Time : "+ hour%12 + " PM", 50,100);
+    console.log(hour) 
+    }
+     else if(hour==0){ 
+         text("Time : 12 AM",100,100);
+         }
 
+         else{ text("Time : "+ hour%12 + " AM", 50,100);
+         console.log(hour) 
+        }
 
     Engine.update(engine);
-
-    // write code to display time in correct format here
     
 }
 
